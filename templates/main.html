@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Template Generator</title>
+
+    <link href="https://pagecdn.io/lib/easyfonts/fonts.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="{{url_for('static', filename='code-behind.js')}}"></script>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}" />
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Schedule Template Generator</a>
+      </div>
+    </nav>
+
+    <br />
+
+    <form action="/preview" method="POST" id="StreamTemplate" target="_blank" enctype='multipart/form-data'>
+      <div class="mb-5 d-flex justify-content-center">
+        <div
+          class="border border-white d-flex p-2 stream-template-output"
+          id="main-template"
+        >
+          <div class="d-flex flex-column stream-template-descriptions p-0">
+            <div class="m-3 px-3">
+              <div id="StreamTitle">Stream Schedule</div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                  <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                    <div class="day">SUN</div>
+                  </div>
+                  <textarea
+                    class="form-control StreamDesc Streambg"
+                    
+                    type="text"
+                    name="SundayDesc"
+                    id="SundayDesc"
+                  ></textarea>
+              </div>
+            </div>
+
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">MON</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="MondayDesc"
+                  id="MondayDesc"
+                ></textarea>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">TUES</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="TuesdayDesc"
+                  id="TuesdayDesc"
+                ></textarea>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">WED</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="WednesdayDesc"
+                  id="WednesdayDesc"
+                ></textarea>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">THURS</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="ThursdayDesc"
+                  id="ThursdayDesc"
+                ></textarea>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">FRI</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="FridayDesc"
+                  id="FridayDesc"
+                ></textarea>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1">
+              <div
+                class="
+                  d-inline-flex
+                  input-group
+                  justify-content-center
+                  align-items-center
+                  Streambg
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day">SAT</div>
+                </div>
+                <textarea
+                  class="form-control StreamDesc Streambg"
+                  
+                  type="text"
+                  name="SaturdayDesc"
+                  id="SaturdayDesc"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="border border-white my-3 optional-text Optionalbg">
+              <textarea
+                  class="form-control OptionalDesc Optionalbg"
+                  type="text"
+                  name="OptionalTextDesc"
+                  id="OptionalText"
+                ></textarea>
+            </div>
+          </div>
+
+          <div
+            class="
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+              p-3
+              stream-template-bg
+            "
+          >
+            <div class="input-group w-75 mb-3 justify-content-center align-items-center">
+              <input
+                type="file"
+                name="CurrentImage"
+                class="form-control"
+                onchange="readURL(event)"
+                accept="image/*"
+              />
+              <input type="hidden" id="image_url" name="image_url" value=""/>
+              <span class="material-icons mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Upload Your Background Image Here!" style= "cursor:default">
+                help
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5" style="width: 85%;">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-title-settings-tab" data-bs-toggle="tab" data-bs-target="#nav-title-settings" type="button" role="tab" aria-controls="nav-title-settings" aria-selected="true">Title Settings</button>
+            <button class="nav-link" id="nav-day-settings-tab" data-bs-toggle="tab" data-bs-target="#nav-day-settings" type="button" role="tab" aria-controls="nav-day-settings" aria-selected="false">Days of the Week Settings</button>
+            <button class="nav-link" id="nav-stream-desc-tab" data-bs-toggle="tab" data-bs-target="#nav-stream-desc" type="button" role="tab" aria-controls="nav-stream-desc" aria-selected="false">Stream Description Settings</button>
+            <button class="nav-link" id="nav-optional-desc-tab" data-bs-toggle="tab" data-bs-target="#nav-optional-desc" type="button" role="tab" aria-controls="nav-optional-desc" aria-selected="false">Optional Description Settings</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-title-settings" role="tabpanel" aria-labelledby="nav-title-settings-tab">
+            <div class="container my-5">
+              <div
+                class="my-3 row gy-3 d-flex justify-content-center align-items-center"
+              >
+                <div class="m-1 col-5">Title Font Style</div>
+        
+                <div class="m-1 col-3">
+                  <select
+                    class="form-select btn-secondary btn-secondary"
+                    onchange="fontstyle(this, 'StreamTitle')"
+                    name="TitleFontStyle"
+                  >
+                    <option selected value="">Choose A Font</option>
+                    {% for font in fontsValue %}
+                    <option value="{{ font }}">{{ fontsDisplay[loop.index0] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+        
+                <div class="w-100"></div>
+        
+                <div class="m-1 col-5">Title Font Size</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="range"
+                    onmousemove="fontsize(this.id, 'StreamTitle');"
+                    class="form-range"
+                    min="5"
+                    max="50"
+                    step="1"
+                    value="16"
+                    id="title-font-slider"
+                    name="TitleFontSize"
+                  />
+                </div>
+        
+                <div class="w-100"></div>
+                <div class="m-1 col-5">Title Font Color</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="color"
+                    name="TitleFontColor"
+                    class="form-control form-control-color"
+                    id="exampleColorInput"
+                    value="#FFFFFF"
+                    oninput="fontcolor(this.id, 'StreamTitle')"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="nav-day-settings" role="tabpanel" aria-labelledby="nav-day-settings-tab">
+            <div class="container my-5">
+              <div class="my-3 gy-3 row d-flex justify-content-center align-items-center">
+                <div class="m-1 col-5">Days of the week Font Style</div>
+                <div class="m-1 col-3">
+                  <select
+                    class="form-select btn-secondary"
+                    aria-label="Default select example"
+                    onchange="dayfontstyle(this, 'day')"
+                    name="DayFontStyle"
+                  >
+                    <option selected value="">Choose A Font</option>
+                    {% for font in fontsValue %}
+                    <option value="{{ font }}">{{ fontsDisplay[loop.index0] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+        
+                <div class="w-100"></div>
+        
+                <div class="m-1 col-5">Days of the week Font Color</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="exampleColorInput"
+                    value="#FFFFFF"
+                    oninput="multifontcolor(this, 'day')"
+                    name="DayFontColor"
+                  />
+                </div>
+        
+                <div class="w-100"></div>
+        
+                <div class="m-1 col-5">Days of the week Background Color</div>
+        
+                <div class="m-1 col-3">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="exampleColorInput"
+                    value="#1e1e1e"
+                    oninput="multibgcolor(this, 'daybg')"
+                    name="DayBgColor"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-stream-desc" role="tabpanel" aria-labelledby="nav-stream-desc-tab">
+            <div class="container my-5">
+              <div class="my-3 gy-3 row d-flex justify-content-center align-items-center">
+                <div class="m-1 col-5">Stream Description Font Style</div>
+                <div class="m-1 col-3">
+                  <select
+                    class="form-select btn-secondary"
+                    onchange="descfontstyle(this, 'StreamDesc')"
+                    name="StreamDescFontStyle"
+                  >
+                    <option selected value="">Choose A Font</option>
+                    {% for font in fontsValue %}
+                    <option value="{{ font }}">{{ fontsDisplay[loop.index0] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+        
+                <div class="w-100"></div>
+                <div class="m-1 col-5">Stream Description Font Size</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="range"
+                    onmousemove="multifontsize(this.id, 'StreamDesc');"
+                    class="form-range"
+                    min="9"
+                    max="19"
+                    step="1"
+                    value="12"
+                    id="stream-desc-slider"
+                    name="StreamDescFontSize"
+                  />
+                </div>
+                <div class="w-100"></div>
+
+                <div class="m-1 col-5">Stream Description Font Color</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="StreamDescColorInput"
+                    value="#000000"
+                    oninput="multifontcolor(this, 'StreamDesc')"
+                    name="StreamDescFontColor"
+                  />
+                </div>
+
+                <div class="w-100"></div>
+        
+                <div class="m-1 col-5">Stream Description Background Color</div>
+                <div class="m-1 col-3">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="exampleColorInput"
+                    value="#1e1e1e"
+                    oninput="multibgcolor(this, 'Streambg')"
+                    name="StreamBgColor"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-optional-desc" role="tabpanel" aria-labelledby="nav-optional-desc-tab">
+            <div class="container my-5">
+              <div class="my-3 gy-3 row d-flex justify-content-center align-items-center">
+                <div class="m-1 col-5">
+                  <label class="form-check-label" for="optional-text">Optional Text Enable</label>
+                </div>
+                <div class="m-1 col-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="optional-checkbox" onchange="showoptional(this)" name="OptionalEnable">
+                  </div>
+                </div>
+      
+                <div class="w-100"></div>
+                
+                <div class="m-1 col-5 optional-text">Optional Text Font Style</div>
+              
+                <div class="m-1 col-3 optional-text">
+                  <select
+                    class="form-select btn-secondary"
+                    onchange="optionalfontstyle(this, 'OptionalDesc')"
+                    name="OptionalFontStyle"
+                  >
+                    <option selected value="">Choose A Font</option>
+                    {% for font in fontsValue %}
+                    <option value="{{ font }}">{{ fontsDisplay[loop.index0] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+        
+                <div class="w-100"></div>
+        
+                <div class="m-1 col-5 optional-text">Optional Text Font Size</div>
+                <div class="m-1 col-3 optional-text">
+                  <input
+                    type="range"
+                    onmousemove="fontsize(this.id, 'OptionalText');"
+                    class="form-range"
+                    min="9"
+                    max="19"
+                    step="1"
+                    value="12"
+                    id="optional-text-slider"
+                    name="OptionalTextFontSize"
+                  />
+                </div>
+        
+                <div class="w-100"></div>
+
+                <div class="m-1 col-5 optional-text">Optional Text Font Color</div>
+                <div class="m-1 col-3 optional-text">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="OptionalTextColorInput"
+                    value="#000000"
+                    oninput="fontcolor(this.id, 'OptionalText')"
+                    name="OptionalFontColor"
+                  />
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="m-1 col-5 optional-text">Optional Text Background Color</div>
+                <div class="m-1 col-3 optional-text">
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="OptionalBgColorInput"
+                    value="#1e1e1e"
+                    oninput="multibgcolor(this, 'Optionalbg')"
+                    name="OptionalBgColor"
+                  />
+                </div>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+      <div class="container">
+        <div class="my-5 row d-flex justify-content-center align-items-center">
+          <input type="submit" class="btn btn-success w-25" value="Preview">
+      </div>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

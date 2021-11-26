@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Template Generator</title>
+
+    <link href="https://pagecdn.io/lib/easyfonts/fonts.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.js"
+      integrity="sha512-HxRYiFgCqVw4U7zJr3iI0U/820+7BXPHd38EM7HZjtOwCKKwKDinaVLj5bmLj2wsRrJvnpQmB5sFg2kYl+LDHw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="{{url_for('static', filename='code-behind.js')}}"></script>
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}" />
+
+    <style>
+        .day{
+            color: {{ data['DayFontColor'] }};
+        }
+
+        .daybg{
+            background-color: {{ data['DayBgColor']}};
+        }
+
+        .stream-title{
+            font-size: {{ data['TitleFontSize'] }}px;
+            color: {{ data['TitleFontColor'] }};
+        }
+
+        .stream-bg {
+            background-color: {{ data['StreamBgColor']}};
+        }
+
+        .stream-desc {
+            white-space: pre-line;
+            font-size: {{ data['StreamDescFontSize']}}px;
+            color: {{ data['StreamDescFontColor']}};
+        }
+
+        .optional-bg {
+          background-color: {{ data['OptionalBgColor']}};
+        }
+
+        .optional-desc {
+          white-space: pre-line;
+          font-size: {{ data['OptionalTextFontSize']}}px;
+          color: {{ data['OptionalFontColor']}};
+        }
+
+        .stream-template-output {
+          background-size: cover;
+          background-image: {{ data['image_url'] }};
+        }
+        
+        
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Schedule Template Generator</a>
+      </div>
+    </nav>
+
+    <br />
+
+    <div class="mb-5 d-flex justify-content-center">
+        <div
+          class="border border-white d-flex p-2 stream-template-output"
+          id="capture-template"
+        >
+          <div class="d-flex flex-column stream-template-descriptions p-0">
+            <div class="m-3 px-3">
+              <div id="StreamTitle" class="stream-title font-{{ data['TitleFontStyle'] }}">Stream Schedule</div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                  <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                    <div class="day font-{{ data['DayFontStyle'] }}">SUN</div>
+                  </div>
+                  <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{data['SundayDesc']}}</div>
+              </div>
+            </div>
+
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">MON</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['MondayDesc'] }}</div>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">TUES</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['TuesdayDesc'] }}</div>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">WED</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['WednesdayDesc'] }}</div>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">THURS</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['ThursdayDesc'] }}</div>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">FRI</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['FridayDesc'] }}</div>
+              </div>
+            </div>
+            <div class="border rounded border-white my-1 stream-bg">
+              <div
+                class="
+                  d-inline-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="
+                    d-inline-flex
+                    justify-content-center
+                    align-items-center
+                    border
+                    rounded
+                    border-white
+                    mx-2
+                    my-1
+                    p-1
+                    daybg
+                  "
+                  
+                >
+                  <div class="day font-{{ data['DayFontStyle'] }}">SAT</div>
+                </div>
+                <div class="m-2 stream-desc font-{{ data['StreamDescFontStyle'] }}">{{ data['SaturdayDesc'] }}</div>
+              </div>
+            </div>
+
+
+            {% if data['OptionalEnable'] == "on" %}
+                <div class="border border-white my-3 optional-bg">
+                    <div class="m-3 font-{{ data['OptionalFontStyle'] }} optional-desc" >{{ data['OptionalTextDesc'] }}</div>
+                </div>
+            {%endif%}
+
+          </div>
+          
+        </div>
+    </div>
+
+    <div class="my-5 row d-flex justify-content-center align-items-center">
+      <input type="button" class="btn btn-success w-25" value="Save Template" onclick="saveTemplate()"/>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
